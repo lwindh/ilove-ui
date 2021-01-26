@@ -2,13 +2,24 @@ import { useState } from "react";
 import Button from "./components/Button/Button";
 import Menu from "./components/Menu/Menu";
 import MenuItem from "./components/Menu/MenuItem";
+import SubMenu from "./components/Menu/SubMenu";
 function App() {
   const [size, setSize] = useState("");
   return (
     <>
-      <Menu defaultIndex={0} mode={'vertical'} onSelect={(index) => console.log(index)}>
+      <Menu
+        defaultIndex={0}
+        mode={"vertical"}
+        onSelect={(index) => console.log(index)}
+      >
         <MenuItem index={0}>test Menu 1</MenuItem>
-        <MenuItem disabled index={1}>test Menu 2</MenuItem>
+        <MenuItem disabled index={1}>
+          test Menu 2
+        </MenuItem>
+        <SubMenu title="dropdown">
+          <MenuItem index={0}>dropdown 1</MenuItem>
+          <MenuItem index={1}>dropdown 2</MenuItem>
+        </SubMenu>
         <MenuItem index={2}>test Menu 3</MenuItem>
       </Menu>
       <div>按钮类型</div>

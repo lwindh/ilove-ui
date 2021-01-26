@@ -38,7 +38,7 @@ const Menu: React.FC<IMenuProps> = (props) => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<IMenuItemProps>;
       const { displayName } = childElement.type;
-      if (displayName === "MenuItem") {
+      if (displayName === "MenuItem" || displayName === "SubMenu") {
         return React.cloneElement(childElement, {
           index,
         });
@@ -50,7 +50,7 @@ const Menu: React.FC<IMenuProps> = (props) => {
   return (
     <ul className={classes} style={style} data-testid="test-menu">
       <MenuContext.Provider value={passedContext}>
-        {renderChildren}
+        {renderChildren()}
       </MenuContext.Provider>
     </ul>
   );
