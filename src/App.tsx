@@ -8,19 +8,20 @@ function App() {
   return (
     <>
       <Menu
-        defaultIndex={0}
+        defaultIndex={"0"}
         mode={"vertical"}
+        defalutOpenSubMenus={["2"]}
         onSelect={(index) => console.log(index)}
       >
-        <MenuItem index={0}>test Menu 1</MenuItem>
-        <MenuItem disabled index={1}>
+        <MenuItem index={"0"}>test Menu 1</MenuItem>
+        <MenuItem disabled index={"1"}>
           test Menu 2
         </MenuItem>
-        <SubMenu title="dropdown">
-          <MenuItem index={0}>dropdown 1</MenuItem>
-          <MenuItem index={1}>dropdown 2</MenuItem>
+        <SubMenu title="dropdown" index={"2"}>
+          <MenuItem index={"2-0"}>dropdown 1</MenuItem>
+          <MenuItem index={"2-1"}>dropdown 2</MenuItem>
         </SubMenu>
-        <MenuItem index={2}>test Menu 3</MenuItem>
+        <MenuItem index={"3"}>test Menu 3</MenuItem>
       </Menu>
       <div>按钮类型</div>
       <Button btnType="primary">Primary Button</Button>
