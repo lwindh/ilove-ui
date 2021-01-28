@@ -1,16 +1,17 @@
 import { useState } from "react";
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fas } from "@fortawesome/free-solid-svg-icons"
 import Button from "./components/Button/Button";
 import Menu from "./components/Menu/Menu";
 import MenuItem from "./components/Menu/MenuItem";
 import SubMenu from "./components/Menu/SubMenu";
+library.add(fas)
 function App() {
   const [size, setSize] = useState("");
   return (
     <>
       <Menu
         defaultIndex={"0"}
-        mode={"vertical"}
-        defalutOpenSubMenus={["2"]}
         onSelect={(index) => console.log(index)}
       >
         <MenuItem index={"0"}>test Menu 1</MenuItem>
