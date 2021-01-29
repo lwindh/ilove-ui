@@ -129,6 +129,14 @@
 }
 
 .btn-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  @include button-size(
+    0,
+    0,
+    $btn-font-size,
+    $border-radius
+  );
   border-radius: 50%;
 }
 

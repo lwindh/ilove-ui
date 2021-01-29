@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import Button from "./Button";
-import Icon from '../Icon/icon'
+import Icon from "../Icon/icon";
 
 const defaultButton = () => (
   <Button onClick={action("clicked")}>Default Button</Button>
@@ -19,9 +19,7 @@ const buttonTypes = () => (
     <Button>Default Button</Button>
     <Button btnType="primary">Primary Button</Button>
     <Button btnType="dashed">Dashed Button</Button>
-    <Button btnType="text">
-      Text Button
-    </Button>
+    <Button btnType="text">Text Button</Button>
     <Button btnType="link" target="_block">
       Link Button
     </Button>
@@ -31,7 +29,9 @@ const buttonShaps = () => (
   <>
     <Button>Default</Button>
     <Button shape="round">圆角按钮</Button>
-    {/* <Button shape="circle"><Icon icon="angle-down" size='xs'/></Button> */}
+    <Button shape="circle">
+      <Icon icon="spinner" size="1x" spin theme="primary" />
+    </Button>
   </>
 );
 storiesOf("Button Component", module)
