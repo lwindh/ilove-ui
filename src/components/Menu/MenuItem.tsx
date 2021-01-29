@@ -3,7 +3,9 @@ import classNames from "classnames";
 import { MenuContext } from "./Menu";
 
 export interface IMenuItemProps {
+  /**子菜单项的索引值 */
   index: string;
+  /**设置子菜单项的禁用 */
   disabled?: boolean;
   className?: string;
   style?: React.CSSProperties;

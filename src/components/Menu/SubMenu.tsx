@@ -5,7 +5,9 @@ import { IMenuItemProps } from "./MenuItem";
 import Icon from '../Icon/icon'
 
 export interface ISubMenuProps {
+  /**超级菜单项的索引值 */
   index?: string;
+  /**超级菜单项的标题 */
   title: string;
   className?: string;
 }
