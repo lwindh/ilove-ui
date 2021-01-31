@@ -11,15 +11,20 @@ export interface IMenuItemProps {
   style?: React.CSSProperties;
 }
 
-const MenuItem: React.FC<IMenuItemProps> = (props) => {
-  const { index, disabled, className, style, children } = props;
+const MenuItem: React.FC<IMenuItemProps> = ({
+  index,
+  disabled,
+  className,
+  style,
+  children,
+}) => {
   const context = useContext(MenuContext);
   const classes = classNames("menu-item", className, {
     "is-disabled": disabled,
     "is-active": context.index === index,
   });
   const handleClick = () => {
-    if (context.onSelect && !disabled && (typeof index === 'string')) {
+    if (context.onSelect && !disabled && typeof index === "string") {
       context.onSelect(index);
     }
   };

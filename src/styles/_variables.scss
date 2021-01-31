@@ -102,6 +102,7 @@ $headings-line-height:        1.2 !default;
 $headings-color:              null !default;
 
 // Paragraphs
+$ease-in-out:               cubic-bezier(0.645, 0.045, 0.355, 1);
 $ease-in-out-circ:          cubic-bezier(0.78, 0.14, 0.15, 0.86);
 $paragraph-margin-bottom:   1rem !default;
 
@@ -170,7 +171,7 @@ $enable-pointer-cursor-for-buttons:           true !default;
 
 // 边框 和 border radius
 $border-width:                1px !default;
-$border-color:                $gray-300 !default;
+$border-color:                rgb(216,216,216) !default;
 $border-style-base:           solid !default;
 $border-radius:               .25rem !default;
 $border-radius-lg:            .3rem !default;
@@ -249,6 +250,11 @@ $alert-warning-bg-color:       $yellow !default;
 $alert-error-bg-color:         $red !default;
 $alert-close-color:            $white !default;
 $alert-close-hover-color:      $white !default;
+
+//tabs
+$tabs-card-head-background:    rgb(249,249,249);
+$tabs-card-active-color:       $primary;
+
 //input
 $input-padding-y:                       $btn-padding-y !default;
 $input-padding-x:                       $btn-padding-x !default;

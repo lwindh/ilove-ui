@@ -11,7 +11,7 @@ const alertTypes = () => (
     <Alert closable message="this is alert!" type="info"></Alert>
     <Alert closable message="this is alert!" type="success"></Alert>
     <Alert closable message="this is alert!" type="warning"></Alert>
-    <Alert closable message="this is alert!" type="error"></Alert>
+    <Alert closable={false} message="this is alert!" type="error"></Alert>
   </div>
 );
 
