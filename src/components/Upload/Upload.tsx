@@ -1,6 +1,7 @@
-import React, { ChangeEvent, useRef } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import Button from "../Button/Button";
+import UploadList from "./UploadList";
+import Dragger from "./Dragger";
 
 export type UploadFileStatus = "ready" | "uploading" | "success" | "error";
 export interface UploadFile {
@@ -14,7 +15,7 @@ export interface UploadFile {
   error?: any;
 }
 export interface UploadProps {
-    /**必选参数, 上传的地址 */
+  /**必选参数, 上传的地址 */
   action: string;
   /**上传的文件列表 */
   defaultFileList?: UploadFile[];
@@ -65,8 +66,24 @@ export const Upload: React.FC<UploadProps> = ({
   drag,
 }) => {
   const fileInput = useRef<HTMLInputElement>(null);
+  const [fileList, setFileList] = useState<UploadFile[]>(defaultFileList || []);
 
-  const handlecick = () => {
+  const updateFileList = (
+    updateFile: UploadFile,
+    updateObject: Partial<UploadFile>
+  ) => {
+    setFileList((prevList) => {
+      return prevList.map((file) => {
+        if (file.uid === updateFile.uid) {
+          return { ...file, ...updateObject };
+        } else {
+          return file;
+        }
+      });
+    });
+  };
+
+  const handleClick = () => {
     if (fileInput.current) {
       fileInput.current.click();
     }
@@ -80,6 +97,15 @@ export const Upload: React.FC<UploadProps> = ({
     uploadFiles(files);
     if (fileInput.current) {
       fileInput.current.value = "";
+    }
+  };
+
+  const handleRemove = (file: UploadFile) => {
+    setFileList((prevList) => {
+      return prevList.filter((item) => item.uid !== file.uid);
+    });
+    if (onRemove) {
+      onRemove(file);
     }
   };
 
@@ -102,16 +128,35 @@ export const Upload: React.FC<UploadProps> = ({
   };
 
   const post = (file: File) => {
+    let _file: UploadFile = {
+      uid: Date.now() + "upload-file",
+      status: "ready",
+      name: file.name,
+      size: file.size,
+      percent: 0,
+      raw: file,
+    };
+    setFileList((prevList) => {
+      return [_file, ...prevList];
+    });
     const formData = new FormData();
-    formData.append(file.name, file);
+    formData.append(name || "file", file);
+    if (data) {
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+    }
     axios
       .post(action, formData, {
         headers: {
+          ...headers,
           "Content-Type": "multipart/form-data",
         },
+        withCredentials,
         onUploadProgress: (e) => {
           let percentage = Math.round((e.loaded * 100) / e.total) || 0;
           if (percentage < 100) {
+            updateFileList(_file, { percent: percentage, status: "uploading" });
             if (onProgress) {
               onProgress(percentage, file);
             }
@@ -119,6 +164,7 @@ export const Upload: React.FC<UploadProps> = ({
         },
       })
       .then((res) => {
+        updateFileList(_file, { status: "success", response: res.data });
         if (onSuccess) {
           onSuccess(res.data, file);
         }
@@ -127,6 +173,7 @@ export const Upload: React.FC<UploadProps> = ({
         }
       })
       .catch((err) => {
+        updateFileList(_file, { status: "error", response: err });
         if (onError) {
           onError(err, file);
         }
@@ -138,14 +185,33 @@ export const Upload: React.FC<UploadProps> = ({
 
   return (
     <div className="lv-upload-component">
-      <Button onClick={handlecick}>Upload File</Button>
-      <input
-        className="lv-file-input"
-        style={{ display: "none" }}
-        ref={fileInput}
-        type="file"
-        onChange={handleFileChange}
-      />
+      <div
+        className="lv-upload-input"
+        style={{ display: "inline-block" }}
+        onClick={handleClick}
+      >
+        {drag ? (
+          <Dragger
+            onFile={(files) => {
+              uploadFiles(files);
+            }}
+          >
+            {children}
+          </Dragger>
+        ) : (
+          children
+        )}
+        <input
+          className="lv-file-input"
+          style={{ display: "none" }}
+          ref={fileInput}
+          onChange={handleFileChange}
+          type="file"
+          accept={accept}
+          multiple={multiple}
+        />
+      </div>
+      <UploadList fileList={fileList} onRemove={handleRemove} />
     </div>
   );
 };
