@@ -106,7 +106,7 @@ const asyncComplete = () => {
   );
 };
 
-storiesOf("AutoComplete Component", module)
+storiesOf("AutoComplete 自动完成", module)
   .add("AutoComplete", SimpleComplete)
   .add("自定义下拉选项", myComplete)
   .add("异步请求Github用户名", asyncComplete);

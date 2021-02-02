@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import Tabs from "./Tabs";
 import TabsItem from "./TabsItem";
-import Icon from "../Icon/icon"
+import Icon from "../Icon/Icon"
 
 const defaultTabs = () => (
   <Tabs
@@ -59,7 +59,7 @@ const tabsCardIcon = () => (
     </TabsItem>
   </Tabs>
 );
-storiesOf("Tabs Component", module)
+storiesOf("Tabs 标签页", module)
   .add("Tabs", defaultTabs)
   .add("选项卡 tabs", tabsCard)
   .add("自定义选项卡样式", tabsCardIcon);

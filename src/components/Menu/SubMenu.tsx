@@ -2,7 +2,7 @@ import React, { useContext, useState, FunctionComponentElement } from "react";
 import classNames from "classnames";
 import { MenuContext } from "./Menu";
 import { IMenuItemProps } from "./MenuItem";
-import Icon from '../Icon/icon'
+import Icon from '../Icon/Icon'
 
 export interface ISubMenuProps {
   /**超级菜单项的索引值 */

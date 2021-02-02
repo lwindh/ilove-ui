@@ -52,7 +52,7 @@ const verticalMenu = () => (
     <MenuItem index={"3"}>test Menu 3</MenuItem>
   </Menu>
 );
-storiesOf("Menu Component", module)
+storiesOf("Menu 导航菜单", module)
   .add("Menu", defaultMenu)
   .add("subMenu", subMenu)
   .add("verticalMenu", verticalMenu);

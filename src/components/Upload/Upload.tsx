@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useRef, useState } from "react";
 import axios from "axios";
 import UploadList from "./UploadList";
 import Dragger from "./Dragger";
@@ -46,7 +46,12 @@ export interface UploadProps {
   /**是否支持拖拽上传 */
   drag?: boolean;
 }
-
+/**
+ * 通过点击或者拖拽上传文件。
+ * ~~~js
+ * import { Upload } from 'vikingship'
+ * ~~~
+ */
 export const Upload: React.FC<UploadProps> = ({
   action,
   defaultFileList,

@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import Button from "./Button";
-import Icon from "../Icon/icon";
+import Icon from "../Icon/Icon";
 
 const defaultButton = () => (
   <Button onClick={action("clicked")}>Default Button</Button>
@@ -34,7 +34,7 @@ const buttonShaps = () => (
     </Button>
   </>
 );
-storiesOf("Button Component", module)
+storiesOf("Button 按钮", module)
   .add("Button", defaultButton)
   .add("不同大小 Button", buttonSizes)
   .add("不同类型 Button", buttonTypes)
