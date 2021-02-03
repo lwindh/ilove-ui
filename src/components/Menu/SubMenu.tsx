@@ -60,7 +60,7 @@ const SubMenu: React.FC<ISubMenuProps> = ({
         }
       : {};
   const renderChildren = () => {
-    const subMenuClasses = classNames("viking-submenu", {
+    const subMenuClasses = classNames("lv-submenu", {
       "menu-opened": menuOpen,
     });
     const childrenComponent = React.Children.map(children, (child, i) => {

@@ -40,7 +40,7 @@ export const Menu: React.FC<IMenuProps> = ({
   onSelect,
 }) => {
   const [currentActive, setActive] = useState(defaultIndex);
-  const classes = classNames("viking-menu", className, {
+  const classes = classNames("lv-menu", className, {
     "menu-vertical": mode === "vertical",
     'menu-horizontal': mode !== 'vertical',
   });
