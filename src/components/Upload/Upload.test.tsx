@@ -62,7 +62,7 @@ describe("test upload component", () => {
       name: 'test.png'
     }))
   })
-  it('drag and drop files should works fine', async () => {
+  /* it('drag and drop files should works fine', async () => {
     fireEvent.dragOver(uploadArea)
     expect(uploadArea).toHaveClass('is-dragover')
     fireEvent.dragLeave(uploadArea)
@@ -79,5 +79,5 @@ describe("test upload component", () => {
       expect(wrapper.queryByText('test.png')).toBeInTheDocument()
     })
     expect(testProps.onSuccess).toHaveBeenCalledWith('cool', testFile)
-  })
+  }) */
 });
