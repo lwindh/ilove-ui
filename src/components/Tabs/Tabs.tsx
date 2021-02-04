@@ -1,7 +1,8 @@
 import React, { useState, createContext } from "react";
 import classNames from "classnames";
 import { TabsItemProps } from "./TabsItem";
-interface TabsProps {
+
+export interface TabsProps {
   className?: string;
   /**当前激活 tab 面板的 key，默认为0 */
   defaultActiveKey?: string;
