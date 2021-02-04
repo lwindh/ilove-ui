@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Icon from "../Icon/Icon";
 
 type AlertTypes = "success" | "info" | "error" | "warning";
-interface AlertProps {
+export interface AlertProps {
   className?: string;
   /**标题 */
   message: string;
@@ -54,7 +54,7 @@ export const Alert: React.FC<AlertProps> = ({
       </button>
     ) : null;
   return (
-    <div data-show={!closed} className={classes} role="alert">
+    <div data-show={!closed} data-testid="test-alert" className={classes} role="alert">
       <div className={`alert-content`}>
         <div className={`alert-message`}>{message}</div>
         <div className={`alert-description`}>{description}</div>
