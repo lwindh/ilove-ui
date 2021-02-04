@@ -26,7 +26,7 @@ const Progress: React.FC<ProgressProps> = ({
   theme,
 }) => {
   return (
-    <div className="lv-progress-bar" style={styles}>
+    <div className="lv-progress-bar" style={styles} data-testid="test-progress">
       <div
         className="lv-progress-bar-outer"
         style={{ height: `${strokeHeight}px` }}
