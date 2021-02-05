@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import Icon from "../Icon/Icon";
+import Icon from "../Icon";
 
 type AlertTypes = "success" | "info" | "error" | "warning";
 export interface AlertProps {

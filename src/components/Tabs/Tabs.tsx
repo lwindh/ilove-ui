@@ -63,7 +63,10 @@ export const Tabs: React.FC<TabsProps> = ({
 
   const renderTabContent = () => {
     return React.Children.map(children, (child, index) => {
-      if (index.toString() === active) return child?.props?.children;
+      if (index.toString() === active){
+        const childElement = child as React.FunctionComponentElement<HTMLElement>;
+        return childElement.props.children;
+      }
     });
   };
   return (
