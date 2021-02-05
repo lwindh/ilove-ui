@@ -7,7 +7,7 @@ interface DraggerProps {
 
 export const Dragger: React.FC<DraggerProps> = ({ onFile, children }) => {
   const [dragOver, setDragOver] = useState(false);
-  const klass = classNames("lv-uploader-dragger", {
+  const classes = classNames("lv-uploader-dragger", {
     "is-dragover": dragOver,
   });
   const handleDrop = (e: DragEvent<HTMLElement>) => {
@@ -21,7 +21,7 @@ export const Dragger: React.FC<DraggerProps> = ({ onFile, children }) => {
   };
   return (
     <div
-      className={klass}
+      className={classes}
       onDragOver={(e) => {
         handleDrag(e, true);
       }}
