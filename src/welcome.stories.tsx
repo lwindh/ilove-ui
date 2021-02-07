@@ -6,12 +6,22 @@ storiesOf("Welcome page", module).add(
   () => {
     return (
       <>
-        <h1>欢迎来到 lv 组件库</h1>
-        <p>
-          lv 是一套简单易用的组件库
-        </p>
-        <h3>安装试试</h3>
+        <h1>快速上手</h1>
+        <p>ilove-ui 是一套简单易用的组件库</p>
+        <h3>安装</h3>
         <code>npm install ilove-ui --save</code>
+        <h3>使用</h3>
+        <code>
+          <span>// 加载样式</span>
+          <br />
+          <span>import 'ilove-ui/dist/index.css'</span>
+          <br />
+          <span>// 引入组件</span>
+          <br />
+          <span>
+            import {"\u007B"} Button {"\u007d"} from 'ilove-ui'
+          </span>
+        </code>
       </>
     );
   },
