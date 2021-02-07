@@ -36,13 +36,11 @@
     "lint": "eslint --ext js,tsx,ts src --max-warnings 5",
     "build": "npm run build-ts && npm run build-css",
     "test": "react-scripts test",
-    "test:nowatch": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepublish": "npm run test:nowatch && npm run lint && npm run build"
   },
   "eslintConfig": {
     "extends": [
