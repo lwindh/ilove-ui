@@ -21,12 +21,6 @@ jobs:
         # 这个为使用 JamesIves/github-pages-deploy-action脚本所需要的配置
         with:
           persist-credentials: false
-
-      # 执行npm脚本打包项目
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build-storybook
       
       # 执行JamesIves/github-pages-deploy-action将项目发布到Github Pages
       - name: Deploy
