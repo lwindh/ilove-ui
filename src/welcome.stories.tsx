@@ -11,7 +11,7 @@ storiesOf("Welcome page", module).add(
           lv 是一套简单易用的组件库
         </p>
         <h3>安装试试</h3>
-        <code>npm install lv --save</code>
+        <code>npm install ilove-ui --save</code>
       </>
     );
   },

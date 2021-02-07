@@ -21,7 +21,7 @@ export interface AlertProps {
  * ### 引用方法
  * 
  * ~~~js
- * import { Alert } from 'vikingship'
+ * import { Alert } from 'ilove-ui'
  * ~~~
  */
 export const Alert: React.FC<AlertProps> = ({

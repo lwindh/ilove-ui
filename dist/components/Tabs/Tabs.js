@@ -4,7 +4,7 @@ export var tabsContext = createContext({ key: "0" });
 /**
  * 选项卡切换组件。 提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
  * ~~~js
- * import { Tabs } from 'vikingship'
+ * import { Tabs } from 'ilove-ui'
  * ~~~
  */
 export var Tabs = function (_a) {
@@ -40,9 +40,10 @@ export var Tabs = function (_a) {
     };
     var renderTabContent = function () {
         return React.Children.map(children, function (child, index) {
-            var _a;
-            if (index.toString() === active)
-                return (_a = child === null || child === void 0 ? void 0 : child.props) === null || _a === void 0 ? void 0 : _a.children;
+            if (index.toString() === active) {
+                var childElement = child;
+                return childElement.props.children;
+            }
         });
     };
     return (React.createElement(React.Fragment, null,

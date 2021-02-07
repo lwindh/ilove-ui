@@ -27,7 +27,7 @@ export interface IconProps extends FontAwesomeIconProps {
  * 
  * 更多例子请参见：https://github.com/FortAwesome/react-fontawesome#basic
  * ~~~js
- * import { Icon } from 'vikingship'
+ * import { Icon } from 'ilove-ui'
  * ~~~
  */
 const Icon: React.FC<IconProps> = ({ className, theme, ...restProps }) => {

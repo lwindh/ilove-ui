@@ -32,7 +32,7 @@ import { FontAwesomeIcon, } from "@fortawesome/react-fontawesome";
  *
  * 更多例子请参见：https://github.com/FortAwesome/react-fontawesome#basic
  * ~~~js
- * import { Icon } from 'vikingship'
+ * import { Icon } from 'ilove-ui'
  * ~~~
  */
 var Icon = function (_a) {

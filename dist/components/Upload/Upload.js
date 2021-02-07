@@ -23,7 +23,7 @@ import Dragger from "./Dragger";
 /**
  * 通过点击或者拖拽上传文件。
  * ~~~js
- * import { Upload } from 'vikingship'
+ * import { Upload } from 'ilove-ui'
  * ~~~
  */
 export var Upload = function (_a) {

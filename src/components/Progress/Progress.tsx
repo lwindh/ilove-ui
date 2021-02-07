@@ -15,7 +15,7 @@ export interface ProgressProps {
 /**
  * 在操作需要较长时间才能完成时，为用户显示该操作的当前进度和状态。
  * ~~~js
- * import { Progress } from 'vikingship'
+ * import { Progress } from 'ilove-ui'
  * ~~~
  */
 const Progress: React.FC<ProgressProps> = ({

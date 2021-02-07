@@ -16,7 +16,7 @@ export declare const tabsContext: React.Context<ITabsContext>;
 /**
  * 选项卡切换组件。 提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
  * ~~~js
- * import { Tabs } from 'vikingship'
+ * import { Tabs } from 'ilove-ui'
  * ~~~
  */
 export declare const Tabs: React.FC<TabsProps>;
