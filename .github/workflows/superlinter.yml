@@ -4,23 +4,20 @@ name: Super-Linter
 on: push
 
 jobs:
-  # Set the job key. The key is displayed as the job name
-  # when a job name is not provided
-  super-lint:
-    # Name the Job
-    name: Lint code base
-    # Set the type of machine to run on
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-      uses: actions/checkout@master # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-      with:
-        persist-credentials: false
-    - name: Install and Build
-      run: |
-        npm install
-        npm run-script build
+        uses: actions/checkout@master # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+
+      - name: Install and Build
+        run: |
+          npm install
+          npm run-script build
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         env:
