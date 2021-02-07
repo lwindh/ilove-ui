@@ -24,4 +24,4 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FOLDER: storybook-static
-          BUILD_SCRIPT: npm run build-storybook
+          BUILD_SCRIPT: npm intall && npm run storybook
