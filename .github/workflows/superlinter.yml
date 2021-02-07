@@ -13,15 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      # Runs the Super-Linter action
-      - name: Run Super-Linter
-        uses: github/super-linter@v3
+      - name: Checkout
+      uses: actions/checkout@master # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      with:
+        persist-credentials: false
+    - name: Install and Build
+      run: |
+        npm install
+        npm run-script build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         env:
-          DEFAULT_BRANCH: main
+          BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FOLDER: storybook-static
-          BUILD_SCRIPT: npm intall && npm run storybook
+          BUILD_SCRIPT: npm intall && npm run build-storybook
