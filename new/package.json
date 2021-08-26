@@ -15,7 +15,9 @@
   "author": "",
   "license": "ISC",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "commitizen": "^4.2.4",
