@@ -116,6 +116,7 @@ export const Upload: React.FC<UploadProps> = ({
 
   const uploadFiles = (files: FileList) => {
     let postFiles = Array.from(files);
+    console.log(111, files[0])
     postFiles.forEach((file) => {
       if (!beforeUpload) {
         post(file);
