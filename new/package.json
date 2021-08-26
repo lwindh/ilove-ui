@@ -1,11 +1,40 @@
 {
-  "name": "new",
+  "name": "react-component",
   "version": "1.0.0",
-  "description": "",
+  "description": "A React UI Component",
   "main": "index.js",
+  "keywords": [
+    "Component",
+    "UI",
+    "React"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git cz"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "commitizen": "^4.2.4",
+    "commitlint-config-cz": "^0.13.2",
+    "cz-customizable": "^6.3.0",
+    "husky": "^7.0.2",
+    "lerna": "^4.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
